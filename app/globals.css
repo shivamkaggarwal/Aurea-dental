@@ -6455,3 +6455,301 @@ a {
   position: relative;
   z-index: 2;
 }
+
+/* =====================================================
+   MOBILE RESPONSIVE FIX
+   ===================================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  section,
+  main,
+  footer {
+    max-width: 100%;
+  }
+
+  /* Prevent desktop-sized containers */
+  .container,
+  .section-container,
+  .results-container,
+  .gallery-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Prevent grids from creating horizontal overflow */
+  .results-grid,
+  .gallery-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Images must stay inside viewport */
+  img {
+    max-width: 100%;
+  }
+}
+
+/* =====================================================
+   DOCTORS — MOBILE FIX
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .doctors-section {
+    overflow: hidden;
+  }
+
+  .doctors-section * {
+    max-width: 100%;
+  }
+
+  /* Main heading */
+  .doctors-section h2 {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-size: clamp(48px, 14vw, 72px);
+    line-height: 0.95;
+  }
+
+  /* Decorative tooth / graphic */
+  .doctors-section img,
+  .doctors-section svg {
+    max-width: 100%;
+  }
+
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE FIXES
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ---------- GLOBAL ---------- */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+
+  /* ---------- NAVBAR ---------- */
+
+  .navbar,
+  .nav,
+  header {
+    max-width: calc(100% - 24px);
+  }
+
+  /* Desktop navigation links hide on phone */
+  nav {
+    display: none;
+  }
+
+  /* If your navbar uses these classes */
+  .nav-links,
+  .navbar-links {
+    display: none !important;
+  }
+
+  /* Keep logo + consultation button */
+  .navbar {
+    width: calc(100% - 24px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* ---------- DOCTORS SECTION ---------- */
+
+  .doctors-section {
+    width: 100%;
+    min-height: auto;
+    padding: 80px 24px 60px !important;
+    overflow: hidden;
+  }
+
+  .doctors-heading {
+    width: 100%;
+    position: relative;
+    min-height: auto;
+  }
+
+  /* Meet your dentist */
+  .doctors-eyebrow {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-bottom: 24px;
+    z-index: 5;
+  }
+
+  /* Doctor sign */
+  .doctor-sign-wrap {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 180px !important;
+    height: 180px !important;
+    margin: 0 auto 25px !important;
+    transform: none !important;
+  }
+
+  .doctor-sign {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* AESTHETIC / RESTORATIVE / ALIGNMENT */
+  .doctor-specialties {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 28px;
+    line-height: 1.8;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
+
+  /* Main heading */
+  .doctors-heading-content {
+    width: 100%;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    text-align: center;
+  }
+
+  .doctors-heading-content h2 {
+    font-size: clamp(42px, 12vw, 64px);
+    line-height: 0.95;
+    margin: 0 0 28px;
+  }
+
+  .doctors-heading-content p {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+
+  /* ---------- DOCTOR CARDS ---------- */
+
+  .doctors-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .doctor-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  /* ---------- GENERAL SECTIONS ---------- */
+
+  section {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  /* ---------- GALLERY ---------- */
+
+  .gallery-section {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .gallery-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+
+  /* ---------- TRANSFORMATION / RESULTS ---------- */
+
+  .results-section,
+  .transformation-section {
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .footer {
+    width: 100%;
+    overflow: hidden;
+  }
+}
