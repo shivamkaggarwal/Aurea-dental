@@ -82,11 +82,6 @@ export default function BeforeAfter() {
             </h2>
           </div>
 
-          <p className="results-note">
-            Use genuine before-and-after cases only with
-            appropriate patient permission and medically
-            responsible presentation.
-          </p>
         </div>
 
         {/* CONTENT */}
@@ -103,66 +98,40 @@ export default function BeforeAfter() {
           >
 
             {/* AFTER */}
-            <div className="comparison-panel after-panel">
+<div className="comparison-panel after-panel">
 
-              <div className="comparison-label">
-                AFTER
-              </div>
+  <div className="comparison-label">
+    AFTER
+  </div>
 
-              <div className="smile-visual after-visual">
+  <img
+    src="/after-dental.png"
+    alt="After dental treatment"
+    className="dental-comparison-image"
+  />
 
-                <div className="smile-arc">
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                </div>
-
-                <div className="smile-caption">
-                  SMILE REFINEMENT
-                </div>
-
-              </div>
-
-            </div>
-
+</div>
             {/* BEFORE */}
-            <div
+<div
   className="comparison-panel before-panel"
   style={{
     clipPath: `inset(0 ${100 - position}% 0 0)`,
   }}
 >
-        
 
-              <div className="comparison-label">
-                BEFORE
-              </div>
+  <div className="comparison-label">
+    BEFORE
+  </div>
 
-              <div className="smile-visual before-visual">
+  <img
+    src="/before-dental.png"
+    alt="Before dental treatment"
+    className="dental-comparison-image"
+  />
 
-                <div className="smile-arc">
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                </div>
+</div>
 
-                <div className="smile-caption">
-                  INITIAL SMILE
-                </div>
-
-              </div>
-
-            </div>
+             
 
             {/* DIVIDER */}
             <div

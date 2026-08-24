@@ -6,24 +6,28 @@ const galleryItems = [
     title: "Reception",
     description: "A calm first impression, designed around comfort.",
     className: "gallery-reception",
+    image: "/reception.png",
   },
   {
     number: "02",
     title: "Patient experience",
     description: "Thoughtful spaces for a more comfortable visit.",
     className: "gallery-patient",
+    image: "/patient-experience.png",
   },
   {
     number: "03",
     title: "Technology",
     description: "Advanced digital tools supporting precise treatment.",
     className: "gallery-technology",
+    image: "/technology.png",
   },
   {
     number: "04",
     title: "Treatment room",
     description: "Clinical precision in a calm, considered environment.",
     className: "gallery-treatment",
+    image: "/treatment-room.png",
   },
 ];
 
@@ -62,6 +66,13 @@ export default function Gallery() {
               key={item.number}
               className={`gallery-card ${item.className}`}
             >
+
+                <img
+  src={item.image}
+  alt={item.title}
+  className="gallery-image"
+/>
+
               <div className="gallery-overlay" />
 
               <div className="gallery-card-top">

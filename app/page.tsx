@@ -392,82 +392,201 @@ export default function Home() {
 
 </section>
 
-{/* =====================================================
-    TECHNOLOGY
-===================================================== */}
+{/* =========================================
+    TECHNOLOGY — DIGITAL DIAGNOSTICS
+========================================= */}
 
-<section className="technology-section" id="technology">
+<section className="tech-v2" id="technology">
 
-  {/* LEFT — SCAN VISUAL */}
-  <div className="technology-visual">
+  {/* LEFT — DIGITAL SCAN EXPERIENCE */}
+  <div className="tech-v2-visual">
 
-    <div className="scan-orbit scan-orbit-1"></div>
-    <div className="scan-orbit scan-orbit-2"></div>
-
-    <div className="scan-center">
-      <span>3D SCAN</span>
+    <div className="tech-v2-top-label">
+      <span className="tech-v2-status-dot"></span>
+      DIGITAL DIAGNOSTICS
     </div>
 
-    <div className="scan-line"></div>
+    <div className="tech-v2-corner tech-v2-corner-tl"></div>
+    <div className="tech-v2-corner tech-v2-corner-tr"></div>
+    <div className="tech-v2-corner tech-v2-corner-bl"></div>
+    <div className="tech-v2-corner tech-v2-corner-br"></div>
 
-    <div className="scan-corner scan-corner-tl"></div>
-    <div className="scan-corner scan-corner-br"></div>
+    {/* Diagnostic information */}
+    <div className="tech-v2-data tech-v2-data-left">
+      <span>01</span>
+      <strong>CAPTURE</strong>
+    </div>
+
+    <div className="tech-v2-data tech-v2-data-right">
+      <span>02</span>
+      <strong>ANALYZE</strong>
+    </div>
+
+    <div className="tech-v2-data tech-v2-data-bottom">
+      <span>03</span>
+      <strong>PLAN</strong>
+    </div>
+
+    {/* Scan grid */}
+    <div className="tech-v2-grid"></div>
+
+    {/* Rotating scan rings */}
+    <div className="tech-v2-ring tech-v2-ring-1"></div>
+    <div className="tech-v2-ring tech-v2-ring-2"></div>
+    <div className="tech-v2-ring tech-v2-ring-3"></div>
+
+   
+
+    {/* Main scan beam */}
+    <div className="tech-v2-scan-beam"></div>
+
+    {/* Center information */}
+    <div className="tech-v2-center">
+
+      <div className="tech-v2-center-small">
+        INTRAORAL DIGITAL MODEL
+      </div>
+
+      <div className="tech-v2-center-title">
+        3D
+      </div>
+
+      <div className="tech-v2-center-subtitle">
+        SCAN
+      </div>
+
+      <div className="tech-v2-center-line"></div>
+
+      <div className="tech-v2-center-status">
+        ANALYSIS READY
+      </div>
+
+    </div>
+
+    {/* Bottom technical status */}
+    <div className="tech-v2-footer-left">
+      SCAN SYSTEM
+    </div>
+
+    <div className="tech-v2-footer-right">
+      <span></span>
+      READY
+    </div>
 
   </div>
 
 
   {/* RIGHT — CONTENT */}
-  <div className="technology-content">
+  <div className="tech-v2-content">
 
-    <div className="section-eyebrow technology-eyebrow">
+    <div className="tech-v2-eyebrow">
       TECHNOLOGY WITH PURPOSE
     </div>
 
     <h2>
-      Precision at every step.
+      See your smile
+      <br />
+      <span>in greater detail.</span>
     </h2>
 
-    <p className="technology-description">
-      Technology should be explained through patient benefits —
-      comfort, accuracy and better-informed treatment planning.
+    <p className="tech-v2-description">
+      Advanced digital technology helps us understand your teeth,
+      plan treatment precisely, and make every step more predictable.
     </p>
 
 
-    <div className="technology-list">
+    {/* CARD 01 */}
+    <div className="tech-v2-card">
 
-      <div className="technology-card">
-        <div className="technology-card-title">
-          <span>01</span>
-          <strong>3D Imaging</strong>
-        </div>
-
-        <p>
-          Detailed visualization to support accurate treatment planning.
-        </p>
+      <div className="tech-v2-card-number">
+        01
       </div>
 
+      <div className="tech-v2-card-content">
 
-      <div className="technology-card">
-        <div className="technology-card-title">
-          <span>02</span>
-          <strong>Digital Scanning</strong>
+        <div className="tech-v2-card-heading">
+          <h3>3D Imaging</h3>
+          <span>↗</span>
         </div>
 
         <p>
-          A modern, comfortable alternative to traditional impressions.
+          Detailed digital visualization to support accurate
+          treatment planning.
         </p>
+
       </div>
 
+    </div>
 
-      <div className="technology-card">
-        <div className="technology-card-title">
-          <span>03</span>
-          <strong>Guided Treatment</strong>
+
+    {/* CARD 02 */}
+    <div className="tech-v2-card">
+
+      <div className="tech-v2-card-number">
+        02
+      </div>
+
+      <div className="tech-v2-card-content">
+
+        <div className="tech-v2-card-heading">
+          <h3>Digital Scanning</h3>
+          <span>↗</span>
         </div>
 
         <p>
-          Digitally planned workflows designed for precision and predictability.
+          A modern, comfortable alternative to traditional
+          dental impressions.
         </p>
+
+      </div>
+
+    </div>
+
+
+    {/* CARD 03 */}
+    <div className="tech-v2-card">
+
+      <div className="tech-v2-card-number">
+        03
+      </div>
+
+      <div className="tech-v2-card-content">
+
+        <div className="tech-v2-card-heading">
+          <h3>Guided Treatment</h3>
+          <span>↗</span>
+        </div>
+
+        <p>
+          Digitally planned workflows designed for precision,
+          comfort and predictable results.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* PROCESS */}
+    <div className="tech-v2-process">
+
+      <div className="tech-v2-process-item active">
+        <span>01</span>
+        <strong>SCAN</strong>
+      </div>
+
+      <div className="tech-v2-process-line"></div>
+
+      <div className="tech-v2-process-item">
+        <span>02</span>
+        <strong>PLAN</strong>
+      </div>
+
+      <div className="tech-v2-process-line"></div>
+
+      <div className="tech-v2-process-item">
+        <span>03</span>
+        <strong>TREAT</strong>
       </div>
 
     </div>
@@ -484,27 +603,38 @@ export default function Home() {
 
   <div className="doctors-heading">
 
-    <div className="doctors-eyebrow">
-      MEET YOUR DENTIST
-    </div>
-
-    <div className="doctors-heading-content">
-
-      <h2>
-        Expertise with
-        <br />
-        a human touch.
-      </h2>
-
-      <p>
-        Experienced clinicians, thoughtful treatment
-        planning and a commitment to making every
-        visit feel comfortable, clear and personal.
-      </p>
-
-    </div>
-
+  <div className="doctors-eyebrow">
+    MEET YOUR DENTIST
   </div>
+
+  <div className="doctor-sign-wrap">
+    <img
+      src="/doctor-sign.png"
+      alt=""
+      className="doctor-sign"
+    />
+  </div>
+
+  <div className="doctor-specialties">
+  AESTHETIC&nbsp;&nbsp;•&nbsp;&nbsp;RESTORATIVE&nbsp;&nbsp;•&nbsp;&nbsp;ALIGNMENT
+</div>
+
+
+  <div className="doctors-heading-content">
+    <h2>
+      Expertise with
+      <br />
+      a human touch.
+    </h2>
+
+    <p>
+      Experienced clinicians, thoughtful treatment
+      planning and a commitment to making every
+      visit feel comfortable, clear and personal.
+    </p>
+  </div>
+
+</div>
 
 
   <div className="doctors-grid">
@@ -514,22 +644,22 @@ export default function Home() {
     <article className="doctor-card">
 
       <div className="doctor-image">
+  <img
+    src="/doctor-aarav.jpg"
+    alt="Dr. Aarav Mehta"
+    className="doctor-photo"
+  />
 
-        <div className="doctor-image-glow"></div>
+  <div className="doctor-image-glow"></div>
 
-        <div className="doctor-portrait">
-          <span>DR</span>
-        </div>
+  <div className="doctor-number">
+    01
+  </div>
 
-        <div className="doctor-number">
-          01
-        </div>
-
-        <div className="doctor-specialty">
-          AESTHETIC
-        </div>
-
-      </div>
+  <div className="doctor-specialty">
+    AESTHETIC
+  </div>
+</div>
 
 
       <div className="doctor-info">
@@ -562,24 +692,23 @@ export default function Home() {
 
     <article className="doctor-card doctor-card-offset">
 
-      <div className="doctor-image doctor-image-blue">
+     <div className="doctor-image doctor-image-blue">
+  <img
+    src="/doctor-ananya.jpg"
+    alt="Dr. Ananya Kapoor"
+    className="doctor-photo"
+  />
 
-        <div className="doctor-image-glow"></div>
+  <div className="doctor-image-glow"></div>
 
-        <div className="doctor-portrait">
-          <span>DR</span>
-        </div>
+  <div className="doctor-number">
+    02
+  </div>
 
-        <div className="doctor-number">
-          02
-        </div>
-
-        <div className="doctor-specialty">
-          ALIGNMENT
-        </div>
-
-      </div>
-
+  <div className="doctor-specialty">
+    ALIGNMENT
+  </div>
+</div>
 
       <div className="doctor-info">
 

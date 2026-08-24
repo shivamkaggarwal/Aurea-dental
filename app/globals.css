@@ -1362,8 +1362,8 @@ a {
 
 .doctors-heading {
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  gap: 80px;
+  grid-template-columns: 0.45fr 1.55fr;
+  gap: 60px;
   margin-bottom: 100px;
 }
 
@@ -1380,7 +1380,7 @@ a {
 .doctors-heading-content h2 {
   margin: 0;
 
-  font-size: clamp(52px, 6vw, 88px);
+  font-size: clamp(52px, 5.5vw, 82px);
   line-height: 0.96;
   letter-spacing: -0.055em;
   font-weight: 500;
@@ -1389,7 +1389,7 @@ a {
 }
 
 .doctors-heading-content p {
-  max-width: 570px;
+  max-width: 650px;
 
   margin: 38px 0 0;
 
@@ -1406,10 +1406,11 @@ a {
 
 .doctors-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
 
-  max-width: 1180px;
+  width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -1444,7 +1445,7 @@ a {
 }
 
 .doctor-card-offset {
-  margin-top: 90px;
+  margin-top: 55px;
 }
 
 
@@ -1455,7 +1456,7 @@ a {
 .doctor-image {
   position: relative;
 
-  height: 480px;
+  height: 440px;
 
   overflow: hidden;
 
@@ -1593,9 +1594,9 @@ a {
 ----------------------------------------------------- */
 
 .doctor-info {
-  min-height: 245px;
+  min-height: 225px;
 
-  padding: 35px 35px 32px;
+  padding: 30px 32px 30px;
 
   display: flex;
   flex-direction: column;
@@ -1785,390 +1786,749 @@ a {
 
 }
 
-/* =====================================================
-   TECHNOLOGY SECTION
-===================================================== */
+/* ============================================================
+   TECHNOLOGY — DIGITAL DIAGNOSTICS
+============================================================ */
 
 .technology-section {
-  width: 100%;
-  min-height: 760px;
-  padding: 110px 8%;
-  background: #e8f3ff;
-
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: 76px;
+  padding: 120px 7vw;
+  background: #eaf4ff;
+  overflow: hidden;
 }
 
 
-/* -----------------------------------------------------
+/* ============================================================
    LEFT VISUAL
------------------------------------------------------ */
+============================================================ */
 
 .technology-visual {
+  min-height: 650px;
+  border-radius: 38px;
+  overflow: hidden;
   position: relative;
-
-  width: 100%;
-  height: 590px;
-
-  border-radius: 42px;
 
   background:
     radial-gradient(
       circle at 50% 48%,
-      #2d6eb0 0%,
-      #1d4c7c 38%,
-      #12375e 72%,
-      #102f51 100%
+      rgba(86, 165, 231, 0.30),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(31, 105, 175, 0.22),
+      transparent 62%
+    ),
+    linear-gradient(
+      145deg,
+      #173f69 0%,
+      #0d3158 52%,
+      #082744 100%
     );
 
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   box-shadow:
-    inset 0 0 80px rgba(255,255,255,0.04);
+    inset 0 1px 0 rgba(255,255,255,0.14),
+    0 30px 80px rgba(15,55,90,0.16);
+
+  isolation: isolate;
 }
 
 
-/* subtle glow */
-
-.technology-visual::before {
-  content: "";
-  position: absolute;
-
-  width: 260px;
-  height: 260px;
-
-  border-radius: 50%;
-
-  background: rgba(94, 166, 230, 0.16);
-
-  filter: blur(40px);
-}
-
-
-/* scan rings */
-
-.scan-orbit {
-  position: absolute;
-
-  border: 2px solid rgba(191, 220, 247, 0.45);
-
-  border-radius: 50%;
-
-  transform: rotate(-12deg);
-
-  animation: scanRotate 8s linear infinite;
-}
-
-.scan-orbit-1 {
-  width: 330px;
-  height: 210px;
-}
-
-.scan-orbit-2 {
-  width: 390px;
-  height: 250px;
-
-  opacity: 0.35;
-
-  animation-duration: 12s;
-  animation-direction: reverse;
-}
-
-
-/* center */
-
-.scan-center {
+ .technology-visual-inner {
   position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  overflow: hidden;
+}
 
-  width: 210px;
-  height: 140px;
 
-  border: 2px solid rgba(203, 227, 249, 0.65);
+/* ============================================================
+   LABEL
+============================================================ */
 
-  border-radius: 50%;
-
+.scan-label {
+  position: absolute;
+  top: 30px;
+  left: 34px;
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  transform: rotate(-8deg);
-
-  z-index: 2;
-}
-
-.scan-center span {
-  color: white;
-
-  font-size: 16px;
+  gap: 9px;
+  color: rgba(255,255,255,0.72);
+  font-size: 10px;
+  letter-spacing: 0.2em;
   font-weight: 600;
+  z-index: 5;
+}
 
-  letter-spacing: 3px;
-
-  transform: rotate(8deg);
+.scan-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9ed6ff;
+  box-shadow: 0 0 14px rgba(158,214,255,0.9);
+  animation: scanPulse 2s ease-in-out infinite;
 }
 
 
-/* scanning line */
-
-.scan-line {
-  position: absolute;
-
-  width: 250px;
-  height: 2px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.9),
-    transparent
-  );
-
-  animation: scanLine 3.5s ease-in-out infinite;
-
-  z-index: 3;
-}
-
-
-/* corner details */
+/* ============================================================
+   CORNERS
+============================================================ */
 
 .scan-corner {
   position: absolute;
-
-  width: 70px;
-  height: 70px;
-
-  border-color: rgba(200,225,248,0.4);
+  width: 55px;
+  height: 55px;
+  border-color: rgba(185, 221, 250, 0.35);
+  z-index: 4;
 }
 
 .scan-corner-tl {
-  top: 45px;
-  left: 45px;
-
+  top: 48px;
+  left: 48px;
   border-top: 1px solid;
   border-left: 1px solid;
 }
 
-.scan-corner-br {
-  right: 45px;
-  bottom: 45px;
-
+.scan-corner-tr {
+  top: 48px;
+  right: 48px;
+  border-top: 1px solid;
   border-right: 1px solid;
+}
+
+.scan-corner-bl {
+  bottom: 48px;
+  left: 48px;
   border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.scan-corner-br {
+  bottom: 48px;
+  right: 48px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
 }
 
 
-/* -----------------------------------------------------
+/* ============================================================
+   ORBITS
+============================================================ */
+
+.scan-orbit {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+
+  border: 1px solid rgba(158, 208, 246, 0.28);
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  filter: drop-shadow(0 0 10px rgba(120,190,245,0.08));
+}
+
+.scan-orbit-1 {
+  width: 360px;
+  height: 165px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-17deg);
+
+  animation: orbitFloat1 7s ease-in-out infinite;
+}
+
+.scan-orbit-2 {
+  width: 425px;
+  height: 220px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(24deg);
+
+  animation: orbitFloat2 9s ease-in-out infinite;
+}
+
+.scan-orbit-3 {
+  width: 295px;
+  height: 295px;
+
+  border-color: rgba(158,208,246,0.13);
+
+  animation:
+    orbitRotate 18s linear infinite;
+}
+
+
+/* ============================================================
+   CENTER SCAN
+============================================================ */
+
+.scan-core {
+  position: absolute;
+
+  left: 50%;
+  top: 51%;
+
+  width: 230px;
+  height: 230px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
+}
+
+.scan-core-glow {
+  position: absolute;
+  inset: 20px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(104,190,255,0.22),
+      rgba(65,145,210,0.08) 45%,
+      transparent 72%
+    );
+
+  filter: blur(20px);
+
+  animation: coreGlow 4s ease-in-out infinite;
+}
+
+.scan-core-ring {
+  position: absolute;
+  inset: 14px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(188,225,251,0.48);
+
+  box-shadow:
+    0 0 45px rgba(105,180,239,0.16),
+    inset 0 0 35px rgba(105,180,239,0.10);
+
+  animation: coreRing 5s ease-in-out infinite;
+}
+
+.scan-core-content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+  color: white;
+
+  text-shadow:
+    0 0 25px rgba(150,215,255,0.18);
+}
+
+.scan-number {
+  display: block;
+
+  font-size: 48px;
+  line-height: 0.9;
+
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.scan-core-content strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 17px;
+  letter-spacing: 0.24em;
+  font-weight: 600;
+}
+
+.scan-core-content small {
+  display: block;
+  margin-top: 13px;
+  color: rgba(255,255,255,0.52);
+  font-size: 7px;
+  letter-spacing: 0.17em;
+}
+
+
+/* ============================================================
+   SCAN BEAM
+============================================================ */
+
+.scan-beam {
+  position: absolute;
+
+  left: 10%;
+  right: 10%;
+  top: 50%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(167,220,255,0.15) 15%,
+      rgba(167,220,255,0.95) 50%,
+      rgba(167,220,255,0.15) 85%,
+      transparent
+    );
+
+  box-shadow:
+    0 0 12px rgba(129,205,255,0.45),
+    0 0 30px rgba(129,205,255,0.18);
+
+  animation: scanBeam 3.8s ease-in-out infinite;
+
+  z-index: 4;
+}
+
+/* ============================================================
+   FLOATING DATA
+============================================================ */
+
+.scan-data {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  color: rgba(255,255,255,0.42);
+
+  font-size: 8px;
+  letter-spacing: 0.16em;
+
+  z-index: 5;
+
+  animation: dataFloat 5s ease-in-out infinite;
+}
+
+.scan-data span {
+  color: rgba(171, 220, 250, 0.7);
+  font-size: 9px;
+}
+
+.scan-data strong {
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.scan-data-1 {
+  top: 31%;
+  left: 15%;
+}
+
+.scan-data-2 {
+  top: 34%;
+  right: 14%;
+}
+
+.scan-data-3 {
+  bottom: 28%;
+  right: 17%;
+}
+
+
+/* ============================================================
+   FOOTER STATUS
+============================================================ */
+
+.scan-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 34px;
+  right: 34px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255,255,255,0.38);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+}
+
+.scan-footer strong {
+  color: rgba(183, 224, 249, 0.75);
+  font-weight: 600;
+}
+
+
+/* ============================================================
    RIGHT CONTENT
------------------------------------------------------ */
+============================================================ */
 
 .technology-content {
-  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .technology-eyebrow {
-  color: #2b6fd0;
+  color: #1c69c7;
+  margin-bottom: 22px;
 }
 
 .technology-content h2 {
-  margin: 22px 0 22px;
-
-  font-size: clamp(42px, 4vw, 64px);
-
-  line-height: 1.02;
-
-  letter-spacing: -0.045em;
-
-  color: #101820;
+  margin: 0;
+  color: #0b1624;
+  font-size: clamp(54px, 5vw, 82px);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  font-weight: 600;
 }
 
 .technology-description {
-  max-width: 620px;
-
-  margin-bottom: 38px;
-
-  color: #60748b;
-
-  font-size: 20px;
-
+  max-width: 650px;
+  margin: 28px 0 42px;
+  color: #55718f;
+  font-size: 19px;
   line-height: 1.65;
 }
 
 
-/* -----------------------------------------------------
-   TECHNOLOGY CARDS
------------------------------------------------------ */
+/* ============================================================
+   CARDS
+============================================================ */
 
 .technology-list {
   display: flex;
   flex-direction: column;
-
-  gap: 14px;
+  gap: 12px;
 }
 
 .technology-card {
-  padding: 25px 28px;
+  display: grid;
+
+  grid-template-columns: 52px 1fr;
+
+  gap: 20px;
+
+  align-items: center;
+
+  padding: 27px 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.94),
+      rgba(255,255,255,0.78)
+    );
+
+  border: 1px solid rgba(44,90,130,0.10);
 
   border-radius: 24px;
 
-  background: rgba(255,255,255,0.72);
-
-  border: 1px solid rgba(35,65,95,0.10);
-
   transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
 }
 
 .technology-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 
-  background: rgba(255,255,255,0.95);
+  background: #ffffff;
+
+  border-color: rgba(28,105,199,0.22);
 
   box-shadow:
-    0 16px 35px rgba(38,75,110,0.10);
+    0 22px 45px rgba(31,76,117,0.12);
+}
+
+.technology-card-number {
+  color: #b04d63;
+  font-size: 12px;
+  letter-spacing: 0.12em;
 }
 
 .technology-card-title {
   display: flex;
   align-items: center;
-
-  gap: 18px;
-
-  margin-bottom: 8px;
-}
-
-.technology-card-title span {
-  color: #7b263d;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  letter-spacing: 1px;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .technology-card-title strong {
-  color: #111820;
-
-  font-size: 20px;
-
+  color: #101d2b;
+  font-size: 19px;
   font-weight: 600;
 }
 
+.technology-card-title span {
+  color: #1c69c7;
+  opacity: 0;
+  transform: translate(-6px, 6px);
+  transition: 0.3s ease;
+}
+
+.technology-card:hover .technology-card-title span {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 .technology-card p {
-  margin: 0;
-
-  padding-left: 38px;
-
-  color: #708197;
-
-  font-size: 15px;
-
+  margin: 7px 0 0;
+  color: #68819b;
+  font-size: 14px;
   line-height: 1.55;
 }
 
 
-/* -----------------------------------------------------
-   ANIMATIONS
------------------------------------------------------ */
+/* ============================================================
+   PROCESS
+============================================================ */
 
-@keyframes scanRotate {
-  from {
-    transform: rotate(-12deg);
-  }
+.technology-process {
+  display: flex;
+  align-items: center;
 
-  to {
-    transform: rotate(348deg);
-  }
+  gap: 14px;
+
+  margin-top: 38px;
+
+  padding-top: 4px;
 }
 
-@keyframes scanLine {
+.technology-process-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.technology-process-item span {
+  color: #b04d63;
+  font-size: 9px;
+}
+
+.technology-process-item strong {
+  color: #18334f;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  font-weight: 600;
+
+  transition: color 0.3s ease;
+}
+
+.technology-process-line {
+  width: 34px;
+  height: 1px;
+  background: rgba(46, 91, 128, 0.2);
+}
+
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+
+@keyframes scanBeam {
   0%,
   100% {
-    transform: translateY(-85px);
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 1;
+    transform: translateY(-115px);
+    opacity: 0.15;
   }
 
   50% {
-    transform: translateY(85px);
+    transform: translateY(115px);
     opacity: 1;
   }
+}
 
-  80% {
-    opacity: 0.5;
+@keyframes orbitFloat1 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-17deg) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(-10deg) scale(1.04);
+  }
+}
+
+@keyframes orbitFloat2 {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(24deg) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(31deg) scale(0.96);
+  }
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes scanPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes coreGlow {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes coreRing {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes dataFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translateY(-5px);
+    opacity: 1;
   }
 }
 
 
-/* -----------------------------------------------------
-   MOBILE
------------------------------------------------------ */
+/* ============================================================
+   TABLET
+============================================================ */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
   .technology-section {
     grid-template-columns: 1fr;
-
-    padding: 80px 6%;
-
     gap: 55px;
+    padding: 90px 6vw;
   }
 
   .technology-visual {
-    height: 480px;
+    min-height: 560px;
+  }
+
+  .technology-visual-inner {
+    min-height: 560px;
   }
 
 }
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
 
 @media (max-width: 600px) {
 
   .technology-section {
-    padding: 65px 20px;
+    padding: 75px 20px;
+    gap: 45px;
   }
 
   .technology-visual {
-    height: 390px;
-
-    border-radius: 30px;
+    min-height: 430px;
+    border-radius: 28px;
   }
 
-  .scan-orbit-1 {
-    width: 260px;
-    height: 170px;
+  .technology-visual-inner {
+    min-height: 430px;
   }
 
-  .scan-orbit-2 {
-    width: 300px;
-    height: 195px;
+  .technology-content h2 {
+    font-size: 52px;
   }
 
-  .scan-center {
-    width: 170px;
-    height: 110px;
+  .technology-description {
+    font-size: 16px;
+    margin: 22px 0 30px;
   }
 
   .technology-card {
-    padding: 21px;
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+    padding: 20px;
   }
 
   .technology-card-title strong {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .technology-card p {
-    padding-left: 0;
+    font-size: 13px;
+  }
+
+  .scan-orbit-1 {
+    width: 250px;
+    height: 120px;
+  }
+
+  .scan-orbit-2 {
+    width: 290px;
+    height: 160px;
+  }
+
+  .scan-orbit-3 {
+    width: 210px;
+    height: 210px;
+  }
+
+  .scan-core {
+    width: 170px;
+    height: 170px;
+  }
+
+  .scan-number {
+    font-size: 36px;
+  }
+
+  .scan-data {
+    display: none;
+  }
+
+  .technology-process {
+    gap: 8px;
+  }
+
+  .technology-process-line {
+    width: 20px;
   }
 
 }
@@ -2196,6 +2556,22 @@ a {
   margin-bottom: 55px;
 }
 
+.transformation-process {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.transformation-process img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+}
+
 .results-header h2 {
   margin: 18px 0 0;
   font-size: clamp(56px, 6vw, 88px);
@@ -2217,7 +2593,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.85fr);
   gap: 32px;
-  align-items: stretch;
+  align-items: center;
 }
 
 
@@ -2716,7 +3092,7 @@ a {
 
 .reviews-section {
   width: 100%;
-  padding: 150px 0;
+  padding-top: 70px;
   background: #f7f4ee;
   overflow: hidden;
 }
@@ -5071,4 +5447,1011 @@ a {
     flex-direction: column;
     gap: 8px;
   }
+}
+
+/* =========================================================
+   AUREA — DIGITAL DIAGNOSTICS V2
+   Premium Technology Section
+========================================================= */
+
+.tech-v2 {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  gap: 72px;
+
+  width: min(1500px, calc(100% - 40px));
+  margin: 0 auto;
+
+  padding: 150px 0 170px;
+
+  background: #eaf3ff;
+
+  border-radius: 42px;
+}
+
+/* =========================================================
+   LEFT VISUAL
+========================================================= */
+
+.tech-v2-visual {
+  position: relative;
+
+  min-height: 620px;
+
+  overflow: hidden;
+
+  border-radius: 38px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(40, 105, 165, 0.55),
+      transparent 28%
+    ),
+    linear-gradient(
+      145deg,
+      #173e69 0%,
+      #10365f 55%,
+      #0c2d52 100%
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 25px 80px rgba(18, 55, 90, 0.12);
+
+  isolation: isolate;
+}
+
+
+/* subtle grid */
+
+.tech-v2-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.14;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   TOP LABEL
+========================================================= */
+
+.tech-v2-top-label {
+  position: absolute;
+
+  top: 28px;
+  left: 38px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: rgba(255,255,255,0.55);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  z-index: 5;
+}
+
+.tech-v2-status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #dceeff;
+
+  box-shadow:
+    0 0 0 4px rgba(220,238,255,0.08),
+    0 0 16px rgba(220,238,255,0.7);
+
+  animation: techPulse 2s infinite;
+}
+
+
+/* =========================================================
+   CORNERS
+========================================================= */
+
+.tech-v2-corner {
+  position: absolute;
+
+  width: 60px;
+  height: 60px;
+
+  opacity: 0.45;
+
+  border-color: rgba(255,255,255,0.5);
+
+  z-index: 4;
+}
+
+.tech-v2-corner-tl {
+  top: 56px;
+  left: 54px;
+
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.tech-v2-corner-tr {
+  top: 56px;
+  right: 54px;
+
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.tech-v2-corner-bl {
+  bottom: 55px;
+  left: 54px;
+
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.tech-v2-corner-br {
+  bottom: 55px;
+  right: 54px;
+
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+
+/* =========================================================
+   SCAN INFORMATION
+========================================================= */
+
+.tech-v2-data {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  z-index: 5;
+
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+
+.tech-v2-data span {
+  color: rgba(255,255,255,0.55);
+}
+
+.tech-v2-data strong {
+  color: rgba(255,255,255,0.35);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.tech-v2-data-left {
+  top: 205px;
+  left: 88px;
+}
+
+.tech-v2-data-right {
+  top: 235px;
+  right: 82px;
+}
+
+.tech-v2-data-bottom {
+  bottom: 160px;
+  right: 86px;
+}
+
+
+/* =========================================================
+   SCAN RINGS
+========================================================= */
+
+.tech-v2-ring {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  border: 1px solid rgba(154,208,255,0.23);
+
+  border-radius: 50%;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-18deg);
+
+  z-index: 1;
+}
+
+.tech-v2-ring-1 {
+  width: 330px;
+  height: 210px;
+
+  animation: techOrbit 10s linear infinite;
+}
+
+.tech-v2-ring-2 {
+  width: 410px;
+  height: 270px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(38deg);
+
+  animation: techOrbitReverse 14s linear infinite;
+}
+
+.tech-v2-ring-3 {
+  width: 510px;
+  height: 320px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-52deg);
+
+  opacity: 0.45;
+
+  animation: techOrbit 18s linear infinite;
+}
+
+
+
+
+
+/* =========================================================
+   SCAN BEAM
+========================================================= */
+
+.tech-v2-scan-beam {
+  position: absolute;
+
+  left: 8%;
+  right: 8%;
+
+  top: 30%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(170,224,255,0.15),
+      rgba(220,245,255,0.95),
+      rgba(170,224,255,0.15),
+      transparent
+    );
+
+  box-shadow:
+    0 0 18px rgba(190,230,255,0.75);
+
+  z-index: 6;
+
+  animation: scanBeam 4.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CENTER LABEL
+========================================================= */
+
+.tech-v2-center {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -40%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 7;
+
+  text-align: center;
+
+  pointer-events: none;
+}
+
+.tech-v2-center-small {
+  margin-bottom: 8px;
+
+  color: rgba(207,232,249,0.48);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+}
+
+.tech-v2-center-title {
+  color: #ffffff;
+
+  font-size: 76px;
+  font-weight: 500;
+
+  line-height: 0.85;
+
+  letter-spacing: -0.06em;
+
+  text-shadow:
+    0 0 30px rgba(150,215,255,0.3);
+}
+
+.tech-v2-center-subtitle {
+  margin-top: 8px;
+
+  color: rgba(255,255,255,0.9);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.32em;
+}
+
+.tech-v2-center-line {
+  width: 105px;
+  height: 1px;
+
+  margin: 16px 0 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.7),
+      transparent
+    );
+}
+
+.tech-v2-center-status {
+  color: rgba(200,230,248,0.48);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+
+/* =========================================================
+   FOOTER STATUS
+========================================================= */
+
+.tech-v2-footer-left,
+.tech-v2-footer-right {
+  position: absolute;
+
+  bottom: 28px;
+
+  color: rgba(255,255,255,0.38);
+
+  font-size: 8px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  z-index: 5;
+}
+
+.tech-v2-footer-left {
+  left: 38px;
+}
+
+.tech-v2-footer-right {
+  right: 38px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tech-v2-footer-right span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #bfe9ff;
+
+  box-shadow:
+    0 0 12px rgba(180,230,255,0.8);
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.tech-v2-content {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 20px 0;
+}
+
+.tech-v2-eyebrow {
+  margin-bottom: 24px;
+
+  color: #2569c7;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.28em;
+}
+
+.tech-v2-content h2 {
+  margin: 0;
+
+  color: #081426;
+
+  font-size: clamp(56px, 5vw, 84px);
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 600;
+}
+
+.tech-v2-content h2 span {
+  color: #081426;
+}
+
+.tech-v2-description {
+  max-width: 650px;
+
+  margin: 30px 0 42px;
+
+  color: #54769b;
+
+  font-size: 19px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.tech-v2-card {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+
+  gap: 20px;
+
+  padding: 26px 30px;
+
+  margin-bottom: 13px;
+
+  border: 1px solid rgba(130,160,190,0.18);
+
+  border-radius: 25px;
+
+  background:
+    rgba(255,255,255,0.78);
+
+  box-shadow:
+    0 8px 30px rgba(60,100,140,0.04);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+
+  cursor: default;
+}
+
+.tech-v2-card:hover {
+  transform: translateX(8px);
+
+  background: #ffffff;
+
+  border-color: rgba(74,130,190,0.25);
+
+  box-shadow:
+    0 18px 45px rgba(50,90,130,0.10);
+}
+
+.tech-v2-card-number {
+  padding-top: 5px;
+
+  color: #b04459;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+.tech-v2-card-content {
+  min-width: 0;
+}
+
+.tech-v2-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tech-v2-card h3 {
+  margin: 0;
+
+  color: #091426;
+
+  font-size: 21px;
+
+  font-weight: 600;
+}
+
+.tech-v2-card-heading span {
+  color: #b04459;
+
+  font-size: 18px;
+
+  opacity: 0;
+
+  transform: translate(-5px, 5px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.tech-v2-card:hover .tech-v2-card-heading span {
+  opacity: 1;
+
+  transform: translate(0, 0);
+}
+
+.tech-v2-card p {
+  margin: 9px 0 0;
+
+  color: #6685a5;
+
+  font-size: 15px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   PROCESS BAR
+========================================================= */
+
+.tech-v2-process {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 30px;
+
+  color: #26486c;
+}
+
+.tech-v2-process-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+.tech-v2-process-item span {
+  color: #b04459;
+
+  font-size: 10px;
+}
+
+.tech-v2-process-item strong {
+  font-size: 10px;
+
+  letter-spacing: 0.16em;
+
+  font-weight: 700;
+}
+
+.tech-v2-process-line {
+  width: 70px;
+  height: 1px;
+
+  margin: 0 13px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #b8cbe0,
+      #d9e4ef
+    );
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes scanBeam {
+  0% {
+    top: 24%;
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  50% {
+    top: 73%;
+    opacity: 1;
+  }
+
+  88% {
+    opacity: 0.6;
+  }
+
+  100% {
+    top: 24%;
+    opacity: 0;
+  }
+}
+
+@keyframes techOrbit {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+@keyframes techOrbitReverse {
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(0deg);
+  }
+}
+
+@keyframes techPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes toothGlow {
+  0%,
+  100% {
+    filter: brightness(0.92);
+  }
+
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .tech-v2 {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+
+    width: min(100% - 40px, 760px);
+
+    padding: 100px 0;
+  }
+
+  .tech-v2-visual {
+    min-height: 600px;
+  }
+
+  .tech-v2-content h2 {
+    font-size: clamp(48px, 8vw, 72px);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .tech-v2 {
+    width: calc(100% - 28px);
+
+    padding: 80px 0;
+  }
+
+  .tech-v2-visual {
+    min-height: 500px;
+
+    border-radius: 28px;
+  }
+
+  .tech-v2-mouth {
+    transform:
+      translate(-50%, -43%)
+      scale(0.72);
+  }
+
+  .tech-v2-ring-1 {
+    width: 270px;
+    height: 170px;
+  }
+
+  .tech-v2-ring-2 {
+    width: 330px;
+    height: 220px;
+  }
+
+  .tech-v2-ring-3 {
+    width: 400px;
+    height: 260px;
+  }
+
+  .tech-v2-center-title {
+    font-size: 58px;
+  }
+
+  .tech-v2-content h2 {
+    font-size: 48px;
+  }
+
+  .tech-v2-description {
+    font-size: 16px;
+  }
+
+  .tech-v2-card {
+    grid-template-columns: 40px 1fr;
+
+    padding: 22px;
+  }
+
+  .tech-v2-card h3 {
+    font-size: 18px;
+  }
+
+  .tech-v2-process-line {
+    width: 25px;
+
+    margin: 0 7px;
+  }
+
+}
+
+/* =========================================
+   DOCTORS - REAL IMAGES
+========================================= */
+
+.doctor-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.doctor-image {
+  overflow: hidden;
+}
+
+.doctor-image-glow {
+  display: none !important;
+}
+
+.doctor-number,
+.doctor-specialty {
+  z-index: 3;
+}
+
+
+/* =========================================
+   DOCTOR SIGN - LEFT HERO AREA
+========================================= */
+
+.doctor-sign-wrap {
+  position: absolute;
+  left: 0;
+  top: 55px;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.doctor-sign {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================================
+   DOCTORS HEADING — FINAL POSITIONING
+   ========================================= */
+
+.doctors-heading {
+  position: relative;
+}
+
+
+/* 1. LEFT EYEBROW */
+
+.doctors-eyebrow {
+  font-size: 14px;
+  letter-spacing: 0.28em;
+  line-height: 1.2;
+  position: relative;
+  z-index: 5;
+}
+
+
+/* 2. DOCTOR SIGN
+   Put it BELOW "MEET YOUR DENTIST"
+*/
+
+.doctor-sign-wrap {
+  position: absolute;
+  left: 0;
+  top: 35px;
+  width: 270px;
+  height: 270px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.doctor-sign {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* 3. RIGHT SIDE HEADING CONTENT
+   Push everything further toward the right
+*/
+
+.doctors-heading-content {
+  width: 58%;
+  margin-left: auto;
+  margin-right: 0;
+  position: relative;
+  z-index: 3;
+}
+
+.doctor-specialties {
+  position: absolute;
+  left: 45px;
+  top: 335px;
+
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #7d263e;
+  white-space: nowrap;
+
+  z-index: 2;
+}
+
+/* ================================
+   DOCTORS SECTION - FINAL SPACING
+   ================================ */
+
+/* 1. Blue section ke neeche ka empty gap kam */
+.doctors-section {
+  padding-top: 120px !important;
+}
+
+/* 2. Meet Your Dentist aur Expertise ke beech gap kam */
+.doctors-heading-content {
+  transform: translateX(-70px);
+}
+
+/* Reduce gap between Doctors and Transformations sections */
+.doctors-section {
+  padding-bottom: 40px !important;
+}
+
+.results-section {
+  padding-top: 40px !important;
+}
+
+.dental-comparison-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.gallery-card-top,
+.gallery-card-content {
+  position: relative;
+  z-index: 2;
 }
