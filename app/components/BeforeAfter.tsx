@@ -163,8 +163,8 @@ export default function BeforeAfter() {
             </h3>
 
             <p className="story-description">
-              Replace the demo panels with genuine,
-              consented patient cases before launch.
+              Real outcomes from thoughtful planning — each smile refined to
+              feel natural, balanced and distinctly yours.
             </p>
 
             <div className="story-tags">

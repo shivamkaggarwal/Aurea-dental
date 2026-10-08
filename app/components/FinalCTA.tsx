@@ -20,7 +20,7 @@ export default function FinalCTA() {
           for better oral health and beautifully natural results.
         </p>
 
-        <a href="#contact" className="final-cta-button">
+        <a href="#booking" className="final-cta-button">
           Book a consultation
         </a>
 

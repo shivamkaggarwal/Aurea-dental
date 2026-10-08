@@ -42,8 +42,8 @@ export default function PatientJourney() {
           </h2>
 
           <p>
-            Every beautiful section ultimately has one job;
-            make the next step obvious.
+            From your first visit through every follow-up, we keep the path
+            clear so you always know what comes next.
           </p>
 
         </div>

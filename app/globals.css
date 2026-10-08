@@ -113,6 +113,132 @@ a {
   transform: translateY(-2px);
 }
 
+.site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+
+  border: 1px solid rgba(210, 199, 187, 0.75);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+
+  cursor: pointer;
+}
+
+.nav-menu-toggle-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 999px;
+  background: #3a3632;
+}
+
+.mobile-nav-overlay,
+.mobile-nav-panel {
+  display: none;
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(24, 20, 18, 0.42);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-nav-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-panel {
+  position: fixed;
+  z-index: 95;
+  top: 88px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+
+  width: min(420px, calc(100% - 28px));
+  max-height: calc(100vh - 100px);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding: 22px 20px 24px;
+
+  border: 1px solid rgba(210, 199, 187, 0.75);
+  border-radius: 24px;
+  background: rgba(255, 253, 249, 0.98);
+
+  box-shadow: 0 24px 60px rgba(50, 35, 25, 0.14);
+
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.mobile-nav-panel.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-list li + li {
+  margin-top: 4px;
+}
+
+.mobile-nav-list a {
+  display: block;
+  padding: 14px 12px;
+  border-radius: 14px;
+  color: #3f3b37;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.mobile-nav-list a:hover,
+.mobile-nav-list a:focus-visible {
+  background: rgba(112, 38, 56, 0.06);
+  color: var(--wine);
+  outline: none;
+}
+
+.mobile-nav-book {
+  margin-top: 8px;
+  text-align: center;
+  background: var(--wine);
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+.mobile-nav-book:hover,
+.mobile-nav-book:focus-visible {
+  background: var(--wine-dark) !important;
+  color: #fff !important;
+}
+
 /* ---------------- HERO ---------------- */
 
 .hero {
@@ -126,7 +252,7 @@ a {
   max-width: 1400px;
   margin: 0 auto;
 
-  padding: 150px 40px 90px;
+  padding: 105px 40px 63px;
 }
 
 .hero-copy {
@@ -393,6 +519,21 @@ a {
     display: none;
   }
 
+  .mobile-nav-overlay,
+  .mobile-nav-panel {
+    display: block;
+  }
+
+  .nav-menu-toggle {
+    display: flex;
+  }
+
+  .site-header-actions .nav-cta {
+    padding: 12px 16px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     padding: 140px 22px 60px;
@@ -422,9 +563,18 @@ a {
     font-size: 24px;
   }
 
-  .nav-cta {
-    padding: 12px 17px;
-    font-size: 11px;
+  .site-header-actions .nav-cta {
+    padding: 10px 12px;
+    font-size: 10px;
+  }
+
+  .nav-menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-nav-panel {
+    top: 78px;
   }
 
   .hero {
@@ -527,7 +677,7 @@ a {
 
 .treatments-section {
   width: 100%;
-  padding: 100px 7vw;
+  padding: 70px 7vw;
   box-sizing: border-box;
 }
 
@@ -535,7 +685,7 @@ a {
 
 .treatments-intro {
   width: 100%;
-  margin-bottom: 80px;
+  margin-bottom: 56px;
 }
 
 .section-eyebrow {
@@ -555,15 +705,16 @@ a {
 .treatments-heading-row > h2 {
   width: 100%;
   max-width: 1250px;
-  margin: 0 0 75px;
+  margin: 0 0 52px;
 }
 
 .treatments-heading-bottom {
   display: grid;
   grid-template-columns: 1fr 0.8fr;
-  gap: 140px;
+  gap: 48px;
   align-items: start;
   width: 100%;
+  min-width: 0;
 }
 
 
@@ -607,6 +758,8 @@ a {
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.01em;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .treatment-index-arrow {
@@ -751,6 +904,24 @@ a {
     );
 }
 
+.treatment-image-family {
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #fff,
+      #e8efe8 75%
+    );
+}
+
+.treatment-image-emergency {
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #fff,
+      #f5e8e8 75%
+    );
+}
+
 
 /* NUMBER */
 
@@ -886,13 +1057,23 @@ a {
 @media (max-width: 850px) {
 
   .treatments-section {
-    padding: 100px 24px;
+    padding: 70px 20px;
   }
 
   .treatments-heading-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
+  }
+
+  .treatments-heading-bottom {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .treatments-heading-bottom > p {
+    margin: 0;
+    max-width: 100%;
   }
 
   .treatments-heading-row h2 {
@@ -1350,7 +1531,7 @@ a {
 
 .doctors-section {
   position: relative;
-  padding: 160px 7vw 150px;
+  padding: 112px 7vw 70px;
   background: #f8f5ef;
   overflow: hidden;
 }
@@ -1363,8 +1544,41 @@ a {
 .doctors-heading {
   display: grid;
   grid-template-columns: 0.45fr 1.55fr;
-  gap: 60px;
-  margin-bottom: 100px;
+  gap: 42px;
+  margin-bottom: 70px;
+  align-items: start;
+}
+
+.doctors-heading-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.doctor-sign-wrap {
+  width: min(240px, 100%);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.doctor-sign {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.doctor-specialties {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  line-height: 1.65;
+  color: #7d263e;
+  text-wrap: balance;
 }
 
 .doctors-eyebrow {
@@ -1642,7 +1856,7 @@ a {
    LINK
 ----------------------------------------------------- */
 
-.doctor-link {
+a.doctor-link {
   align-self: flex-start;
 
   margin-top: 28px;
@@ -1656,6 +1870,7 @@ a {
   font-weight: 600;
 
   color: #1d1d1d;
+  text-decoration: none;
 
   cursor: pointer;
 
@@ -1671,12 +1886,18 @@ a {
     transform 0.3s ease;
 }
 
-.doctor-link:hover {
+a.doctor-link:hover {
   color: #7d263e;
 }
 
-.doctor-link:hover span {
+a.doctor-link:hover span {
   transform: translate(3px, -3px);
+}
+
+@media (min-width: 901px) {
+  .doctors-heading-content {
+    transform: translateX(-40px);
+  }
 }
 
 
@@ -1689,9 +1910,9 @@ a {
 
   grid-template-columns: 0.7fr 1.3fr;
 
-  gap: 80px;
+  gap: 56px;
 
-  margin-top: 110px;
+  margin-top: 77px;
 
   padding-top: 30px;
 
@@ -1724,13 +1945,35 @@ a {
 @media (max-width: 900px) {
 
   .doctors-section {
-    padding: 110px 6vw 120px;
+    padding: 84px 24px 56px;
   }
 
   .doctors-heading {
     grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 70px;
+    gap: 28px;
+    margin-bottom: 48px;
+  }
+
+  .doctors-heading-aside {
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-sign-wrap {
+    margin-inline: auto;
+    width: min(200px, 72vw);
+  }
+
+  .doctors-heading-content {
+    width: 100%;
+    margin: 0;
+    transform: none;
+    text-align: center;
+  }
+
+  .doctors-heading-content p {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .doctors-grid {
@@ -1739,6 +1982,10 @@ a {
 
   .doctor-card-offset {
     margin-top: 0;
+  }
+
+  .doctor-photo {
+    object-position: center 18%;
   }
 
   .doctors-bottom {
@@ -1752,7 +1999,7 @@ a {
 @media (max-width: 600px) {
 
   .doctors-section {
-    padding: 80px 5vw 90px;
+    padding: 70px 18px 56px;
   }
 
   .doctors-heading-content h2 {
@@ -5458,12 +5705,13 @@ a {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
-  gap: 72px;
+  gap: 50px;
 
-  width: min(1500px, calc(100% - 40px));
+  width: min(1400px, calc(100% - clamp(48px, 7vw, 80px)));
   margin: 0 auto;
+  box-sizing: border-box;
 
-  padding: 150px 0 170px;
+  padding: 105px clamp(20px, 3vw, 32px) 119px;
 
   background: #eaf3ff;
 
@@ -6192,11 +6440,11 @@ a {
   .tech-v2 {
     grid-template-columns: 1fr;
 
-    gap: 60px;
+    gap: 42px;
 
-    width: min(100% - 40px, 760px);
+    width: min(100% - 32px, 760px);
 
-    padding: 100px 0;
+    padding: 84px 20px 98px;
   }
 
   .tech-v2-visual {
@@ -6213,9 +6461,10 @@ a {
 @media (max-width: 600px) {
 
   .tech-v2 {
-    width: calc(100% - 28px);
+    width: calc(100% - 24px);
 
-    padding: 80px 0;
+    padding: 70px 16px 84px;
+    border-radius: 28px;
   }
 
   .tech-v2-visual {
@@ -6276,7 +6525,7 @@ a {
 }
 
 /* =========================================
-   DOCTORS - REAL IMAGES
+   DOCTORS — PHOTOS & MEDIA
 ========================================= */
 
 .doctor-photo {
@@ -6289,136 +6538,13 @@ a {
   z-index: 1;
 }
 
-.doctor-image {
-  overflow: hidden;
-}
-
 .doctor-image-glow {
-  display: none !important;
+  display: none;
 }
 
 .doctor-number,
 .doctor-specialty {
   z-index: 3;
-}
-
-
-/* =========================================
-   DOCTOR SIGN - LEFT HERO AREA
-========================================= */
-
-.doctor-sign-wrap {
-  position: absolute;
-  left: 0;
-  top: 55px;
-  width: 220px;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.doctor-sign {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-/* =========================================
-   DOCTORS HEADING — FINAL POSITIONING
-   ========================================= */
-
-.doctors-heading {
-  position: relative;
-}
-
-
-/* 1. LEFT EYEBROW */
-
-.doctors-eyebrow {
-  font-size: 14px;
-  letter-spacing: 0.28em;
-  line-height: 1.2;
-  position: relative;
-  z-index: 5;
-}
-
-
-/* 2. DOCTOR SIGN
-   Put it BELOW "MEET YOUR DENTIST"
-*/
-
-.doctor-sign-wrap {
-  position: absolute;
-  left: 0;
-  top: 35px;
-  width: 270px;
-  height: 270px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  z-index: 1;
-  pointer-events: none;
-}
-
-.doctor-sign {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-
-/* 3. RIGHT SIDE HEADING CONTENT
-   Push everything further toward the right
-*/
-
-.doctors-heading-content {
-  width: 58%;
-  margin-left: auto;
-  margin-right: 0;
-  position: relative;
-  z-index: 3;
-}
-
-.doctor-specialties {
-  position: absolute;
-  left: 45px;
-  top: 335px;
-
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: #7d263e;
-  white-space: nowrap;
-
-  z-index: 2;
-}
-
-/* ================================
-   DOCTORS SECTION - FINAL SPACING
-   ================================ */
-
-/* 1. Blue section ke neeche ka empty gap kam */
-.doctors-section {
-  padding-top: 120px !important;
-}
-
-/* 2. Meet Your Dentist aur Expertise ke beech gap kam */
-.doctors-heading-content {
-  transform: translateX(-70px);
-}
-
-/* Reduce gap between Doctors and Transformations sections */
-.doctors-section {
-  padding-bottom: 40px !important;
-}
-
-.results-section {
-  padding-top: 40px !important;
 }
 
 .dental-comparison-image {
@@ -6456,300 +6582,26 @@ a {
   z-index: 2;
 }
 
-/* =====================================================
-   MOBILE RESPONSIVE FIX
-   ===================================================== */
-
-html,
-body {
+main,
+.site-footer {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.contact-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
 }
 
-img,
-video,
-svg {
-  max-width: 100%;
-  height: auto;
-}
-
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
-@media (max-width: 768px) {
-
-  html,
-  body {
-    width: 100%;
-    overflow-x: hidden;
+@media (max-width: 480px) {
+  .tooth-float {
+    width: min(260px, 72vw);
+    height: min(260px, 72vw);
   }
 
-  section,
-  main,
-  footer {
-    max-width: 100%;
-  }
-
-  /* Prevent desktop-sized containers */
-  .container,
-  .section-container,
-  .results-container,
-  .gallery-container {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Prevent grids from creating horizontal overflow */
-  .results-grid,
-  .gallery-grid {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Images must stay inside viewport */
-  img {
-    max-width: 100%;
-  }
-}
-
-/* =====================================================
-   DOCTORS — MOBILE FIX
-   ===================================================== */
-
-@media (max-width: 768px) {
-
-  .doctors-section {
-    overflow: hidden;
-  }
-
-  .doctors-section * {
-    max-width: 100%;
-  }
-
-  /* Main heading */
-  .doctors-section h2 {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    font-size: clamp(48px, 14vw, 72px);
-    line-height: 0.95;
-  }
-
-  /* Decorative tooth / graphic */
-  .doctors-section img,
-  .doctors-section svg {
-    max-width: 100%;
-  }
-
-}
-
-/* =========================================================
-   MOBILE RESPONSIVE FIXES
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-  /* ---------- GLOBAL ---------- */
-
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-
-  /* ---------- NAVBAR ---------- */
-
-  .navbar,
-  .nav,
-  header {
-    max-width: calc(100% - 24px);
-  }
-
-  /* Desktop navigation links hide on phone */
-  nav {
-    display: none;
-  }
-
-  /* If your navbar uses these classes */
-  .nav-links,
-  .navbar-links {
-    display: none !important;
-  }
-
-  /* Keep logo + consultation button */
-  .navbar {
-    width: calc(100% - 24px);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-
-  /* ---------- DOCTORS SECTION ---------- */
-
-  .doctors-section {
-    width: 100%;
-    min-height: auto;
-    padding: 80px 24px 60px !important;
-    overflow: hidden;
-  }
-
-  .doctors-heading {
-    width: 100%;
-    position: relative;
-    min-height: auto;
-  }
-
-  /* Meet your dentist */
-  .doctors-eyebrow {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    margin-bottom: 24px;
-    z-index: 5;
-  }
-
-  /* Doctor sign */
-  .doctor-sign-wrap {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 180px !important;
-    height: 180px !important;
-    margin: 0 auto 25px !important;
-    transform: none !important;
-  }
-
-  .doctor-sign {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  /* AESTHETIC / RESTORATIVE / ALIGNMENT */
-  .doctor-specialties {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-
-    width: 100%;
-    text-align: center;
-    margin: 0 auto 28px;
-    line-height: 1.8;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-  }
-
-  /* Main heading */
-  .doctors-heading-content {
-    width: 100%;
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-
-    text-align: center;
-  }
-
-  .doctors-heading-content h2 {
-    font-size: clamp(42px, 12vw, 64px);
-    line-height: 0.95;
-    margin: 0 0 28px;
-  }
-
-  .doctors-heading-content p {
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-
-  /* ---------- DOCTOR CARDS ---------- */
-
-  .doctors-grid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .doctor-card {
-    width: 100%;
-    min-width: 0;
-  }
-
-
-  /* ---------- GENERAL SECTIONS ---------- */
-
-  section {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .container {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-
-  /* ---------- GALLERY ---------- */
-
-  .gallery-section {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .gallery-grid {
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-card {
-    width: 100%;
-    min-width: 0;
-  }
-
-
-  /* ---------- TRANSFORMATION / RESULTS ---------- */
-
-  .results-section,
-  .transformation-section {
-    width: 100%;
-    overflow: hidden;
-  }
-
-
-  /* ---------- FOOTER ---------- */
-
-  .footer {
-    width: 100%;
-    overflow: hidden;
+  .treatment-index-item {
+    grid-template-columns: 32px minmax(0, 1fr) 20px;
+    gap: 10px;
   }
 }

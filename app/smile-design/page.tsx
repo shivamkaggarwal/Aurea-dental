@@ -32,7 +32,7 @@ export default function SmileDesignPage() {
             </p>
 
             <a
-              href="/#contact"
+              href="/#booking"
               className="smile-hero-cta"
             >
               Book a consultation

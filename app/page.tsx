@@ -1,4 +1,3 @@
-import Link from "next/link";
 import BeforeAfter from "./components/BeforeAfter";
 import Reviews from "./components/reviews";
 import Gallery from "./components/Gallery";
@@ -6,27 +5,12 @@ import PatientJourney from "./components/PatientJourney";
 import FinalCTA from "./components/FinalCTA";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import SiteHeader from "./components/SiteHeader";
+
 export default function Home() {
   return (
     <main>
-      {/* Navigation */}
-      <header className="site-header">
-        <Link href="/" className="logo">
-          Aurea <span>DENTAL</span>
-        </Link>
-
-        <nav className="nav-links">
-          <a href="#treatments">Treatments</a>
-          <a href="#about">About</a>
-          <a href="#doctors">Doctors</a>
-          <a href="#results">Results</a>
-          <a href="#testimonials">Testimonials</a>
-        </nav>
-
-        <a href="#consultation" className="nav-cta">
-          Book a consultation
-        </a>
-      </header>
+      <SiteHeader />
 
       {/* Hero */}
       <section className="hero">
@@ -49,7 +33,7 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <a href="#consultation" className="primary-button">
+            <a href="#booking" className="primary-button">
               Book a consultation
             </a>
 
@@ -80,8 +64,8 @@ export default function Home() {
 
   <div className="tooth-float">
     <img
-      src="/publictooth-heart.png"
-      alt="Aurea Dental tooth"
+      src="/tooth-heart.png"
+      alt="Decorative Aurea Dental smile icon"
     />
   </div>
 
@@ -191,6 +175,18 @@ export default function Home() {
       <a href="#whitening-care" className="treatment-index-item">
         <span className="treatment-index-number">04</span>
         <span className="treatment-index-name">Whitening &amp; Care</span>
+        <span className="treatment-index-arrow">↗</span>
+      </a>
+
+      <a href="#family-general" className="treatment-index-item">
+        <span className="treatment-index-number">05</span>
+        <span className="treatment-index-name">Family &amp; General Dentistry</span>
+        <span className="treatment-index-arrow">↗</span>
+      </a>
+
+      <a href="#emergency-care" className="treatment-index-item">
+        <span className="treatment-index-number">06</span>
+        <span className="treatment-index-name">Emergency Dental Care</span>
         <span className="treatment-index-arrow">↗</span>
       </a>
 
@@ -383,6 +379,94 @@ export default function Home() {
         <a href="#whitening-care" className="treatment-link">
   Explore treatment <span>↗</span>
 </a>
+
+      </div>
+
+    </article>
+
+
+    {/* 05 — FAMILY & GENERAL */}
+
+    <article id="family-general" className="treatment-card">
+
+      <div className="treatment-image treatment-image-family">
+
+        <span className="treatment-number">
+          05
+        </span>
+
+        <div className="treatment-visual treatment-visual-family" aria-hidden="true">
+          <span>Care</span>
+        </div>
+
+      </div>
+
+      <div className="treatment-content">
+
+        <div>
+
+          <span className="treatment-kicker">
+            FAMILY DENTISTRY
+          </span>
+
+          <h3>
+            Family &amp; General Dentistry
+          </h3>
+
+          <p>
+            Comprehensive exams, hygiene and everyday care for every
+            age — delivered with consistency and a personal touch.
+          </p>
+
+        </div>
+
+        <a href="#family-general" className="treatment-link">
+          Explore treatment <span>↗</span>
+        </a>
+
+      </div>
+
+    </article>
+
+
+    {/* 06 — EMERGENCY */}
+
+    <article id="emergency-care" className="treatment-card">
+
+      <div className="treatment-image treatment-image-emergency">
+
+        <span className="treatment-number">
+          06
+        </span>
+
+        <div className="treatment-visual treatment-visual-emergency" aria-hidden="true">
+          <span>Help</span>
+        </div>
+
+      </div>
+
+      <div className="treatment-content">
+
+        <div>
+
+          <span className="treatment-kicker">
+            URGENT CARE
+          </span>
+
+          <h3>
+            Emergency Dental Care
+          </h3>
+
+          <p>
+            Prompt attention for pain, injury or sudden concerns —
+            with clear guidance and calm, focused treatment.
+          </p>
+
+        </div>
+
+        <a href="#emergency-care" className="treatment-link">
+          Explore treatment <span>↗</span>
+        </a>
 
       </div>
 
@@ -603,22 +687,23 @@ export default function Home() {
 
   <div className="doctors-heading">
 
-  <div className="doctors-eyebrow">
-    MEET YOUR DENTIST
+  <div className="doctors-heading-aside">
+    <div className="doctors-eyebrow">
+      MEET YOUR DENTIST
+    </div>
+
+    <div className="doctor-sign-wrap" aria-hidden="true">
+      <img
+        src="/doctor-sign.png"
+        alt=""
+        className="doctor-sign"
+      />
+    </div>
+
+    <p className="doctor-specialties">
+      Aesthetic · Restorative · Alignment
+    </p>
   </div>
-
-  <div className="doctor-sign-wrap">
-    <img
-      src="/doctor-sign.png"
-      alt=""
-      className="doctor-sign"
-    />
-  </div>
-
-  <div className="doctor-specialties">
-  AESTHETIC&nbsp;&nbsp;•&nbsp;&nbsp;RESTORATIVE&nbsp;&nbsp;•&nbsp;&nbsp;ALIGNMENT
-</div>
-
 
   <div className="doctors-heading-content">
     <h2>
@@ -641,7 +726,7 @@ export default function Home() {
 
     {/* DOCTOR 01 */}
 
-    <article className="doctor-card">
+    <article id="doctor-aarav" className="doctor-card">
 
       <div className="doctor-image">
   <img
@@ -679,9 +764,9 @@ export default function Home() {
           </p>
         </div>
 
-        <button className="doctor-link">
+        <a href="#doctor-aarav" className="doctor-link">
           View profile <span>↗</span>
-        </button>
+        </a>
 
       </div>
 
@@ -690,7 +775,7 @@ export default function Home() {
 
     {/* DOCTOR 02 */}
 
-    <article className="doctor-card doctor-card-offset">
+    <article id="doctor-ananya" className="doctor-card doctor-card-offset">
 
      <div className="doctor-image doctor-image-blue">
   <img
@@ -727,9 +812,9 @@ export default function Home() {
           </p>
         </div>
 
-        <button className="doctor-link">
+        <a href="#doctor-ananya" className="doctor-link">
           View profile <span>↗</span>
-        </button>
+        </a>
 
       </div>
 

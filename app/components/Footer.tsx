@@ -16,7 +16,7 @@ export default function Footer() {
             Naturally beautiful results.
           </h2>
 
-          <a href="#contact" className="footer-cta">
+          <a href="#booking" className="footer-cta">
             Book a consultation
             <span>↗</span>
           </a>
@@ -28,13 +28,9 @@ export default function Footer() {
             CONTACT
           </p>
 
-          <a href="tel:+919XXXXXXXXX">
-            +91 9XXXXXXXXX
-          </a>
+          <a href="tel:+19085550123">(908) 555-0123</a>
 
-          <a href="https://wa.me/91XXXXXXXXXX">
-            WhatsApp
-          </a>
+          <a href="https://wa.me/19085550123">WhatsApp</a>
 
           <a href="mailto:hello@aureadental.com">
             hello@aureadental.com
@@ -59,7 +55,7 @@ export default function Footer() {
           <a href="#doctors">Doctors</a>
           <a href="#results">Results</a>
           <a href="#testimonials">Patient Stories</a>
-          <a href="#contact">Contact</a>
+          <a href="#booking">Contact</a>
         </div>
 
         {/* TREATMENTS */}
@@ -68,21 +64,17 @@ export default function Footer() {
             TREATMENTS
           </p>
 
-          <a href="#treatments">
-            Smile Design
-          </a>
+          <a href="#smile-design">Smile Design</a>
 
-          <a href="#treatments">
-            Align & Refine
-          </a>
+          <a href="#align-refine">Align & Refine</a>
 
-          <a href="#treatments">
-            Implant & Restore
-          </a>
+          <a href="#implant-restore">Implant & Restore</a>
 
-          <a href="#treatments">
-            Whitening & Care
-          </a>
+          <a href="#whitening-care">Whitening & Care</a>
+
+          <a href="#family-general">Family & General Dentistry</a>
+
+          <a href="#emergency-care">Emergency Dental Care</a>
         </div>
 
       </div>
